@@ -53,7 +53,7 @@ export default function ContactsSection() {
         <div className="mx-auto max-w-3xl">
           {/* Header */}
           <div className="text-center mb-12 sm:mb-16 space-y-4 sm:space-y-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight text-[#071A44] tracking-tight">
               Book An Audit Appointment
             </h2>
           </div>

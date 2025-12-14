@@ -43,22 +43,18 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
                         <div className="w-full lg:w-7/12 lg:pl-12">
                             <div className="relative">
                                 {/* Opening Quote */}
-                                <div
-                                    className="text-8xl sm:text-8xl font-extrabold leading-none"
-                                    style={{ color: '#004E6B' }}
-                                >
+                                <div className="text-12xl sm:text-8xl font-extrabold " style={{ color: '#071A44' }}>
                                     “
                                 </div>
-
                                 {/* Quote Text */}
-                                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight px-2 sm:px-4">
+                                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight ">
                                     {quote}
                                 </h1>
 
                                 {/* Closing Quote */}
                                 <div
-                                    className="text-8xl sm:text-8xl  font-extrabold  leading-none text-right mt-2"
-                                    style={{ color: '#004E6B' }}
+                                    className="text-8xl sm:text-8xl  font-extrabold  leading-none text-right "
+                                    style={{ color: '#071A44' }}
                                 >
                                     ”
                                 </div>

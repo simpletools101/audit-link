@@ -29,7 +29,7 @@ export default function CoreValuesSection() {
     ]
 
     return (
-        <section className="py-32 bg-white">
+        <section className="py-32 mt-8 bg-white">
             <div className="container mx-auto px-6">
              
                 {/* Section Title */}
@@ -46,12 +46,12 @@ export default function CoreValuesSection() {
                         transition={{ duration: 0.5 }}
                         viewport={{ once: true }}
                     >
-                        <span className='text-black'>Our</span> <span className='text-[#00A8B5]'>Core Values</span>
+                        <span className='text-[#071A44]'>Our</span> <span className='text-[#00A8B5]'>Core Values</span>
                     </motion.h2>
                 </div>
 
                 {/* GRID */}
-                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div className="grid mt-12 md:grid-cols-2 lg:grid-cols-4 gap-8">
                     {coreValues.map((value, index) => (
                         <motion.div
                             key={index}
