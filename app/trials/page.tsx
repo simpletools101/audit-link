@@ -13,7 +13,7 @@ const AuditHero: React.FC<AuditHeroProps> = ({
 }) => {
     return (
         <section className="bg-white py-16 px-4 sm:px-6 lg:px-8">
-            <div className="flex items-center justify-center mb-8">
+            {/* <div className="flex items-center justify-center mb-8">
                 <h2
                     className="
           font-extrabold
@@ -22,15 +22,15 @@ const AuditHero: React.FC<AuditHeroProps> = ({
           leading-none
         "
                 >
-                    About us
+                    Our Services
                 </h2>
-            </div>
-            <div className=" ">
+            </div> */}
+            <div className="max-w-7xl mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left side - Image */}
                     <div className="relative w-full h-[400px] lg:h-[500px] rounded-3xl overflow-hidden bg-[#071a44]">
                         <div>
-                            <img src={imageSrc} className="object-cover" />
+                            <Image src={imageSrc} alt={imageAlt} fill className="object-cover" priority />
                         </div>
 
                         {/* Experience badge overlay */}
@@ -46,13 +46,11 @@ const AuditHero: React.FC<AuditHeroProps> = ({
                         </h1>
 
                         <p className="text-lg text-slate-600 leading-relaxed">
-                            Auditlink Consulting Ltd is a professional internal audit services firm providing
-                            independent, cost-effective assurance solutions to organizations across multiple sectors. We
-                            support our clients through outsourced and co-sourced internal audit services that
-                            strengthen governance, improve risk management, and enhance internal controls. By combining
-                            deep technical expertise with objectivity and integrity, Auditlink enables organizations to
-                            meet growing compliance demands while making confident, informed decisions as they grow and
-                            evolve.
+                            Auditlink Consulting Ltd was created by internal auditors who saw a clear need:
+                            organizations were facing rising risks, growing compliance demands, and limited audit
+                            capacity. Many struggled to maintain an in-house function that could keep pace. Our founders
+                            stepped in to bridge that gap with an independent, high-calibre audit partner built on
+                            integrity, objectivity, and real technical depth.
                         </p>
                     </div>
                 </div>

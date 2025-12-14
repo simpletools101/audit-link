@@ -1,163 +1,203 @@
 'use client'
 
-import { BanknoteArrowDown, BarChart, Building2, ChessQueen, ChevronLeft, ChevronRight, FileText, Form, HandCoins, HandFist, Landmark, PackageSearch, Shield } from 'lucide-react'
-import { Card, CardContent } from '../ui/card'
-import { useEffect, useState } from 'react'
+import React, { useRef, useState } from 'react'
+import {
+    ChevronLeft,
+    ChevronRight,
+    X,
+    Shield,
+    BarChart,
+    Building2,
+    PackageSearch,
+    Form,
+    BanknoteArrowDown,
+    HandFist,
+    HandCoins,
+    ChessQueen,
+    Landmark,
+    FileText,
+} from 'lucide-react'
 
-export default function ServicesSection() {
-    const [currentServiceSlide, setCurrentServiceSlide] = useState(0)
+type IconComponent = React.ElementType
 
-    useEffect(() => {
-        const timer = setInterval(() => {
-            setCurrentServiceSlide((prev) => (prev + 1) % services.length)
-        }, 4000)
-        return () => clearInterval(timer)
-    }, [])
+interface Service {
+    title: string
+    description: string
+    icon: IconComponent
+}
 
-    const nextService = () => {
-        setCurrentServiceSlide((prev) => (prev + 1) % services.length)
+const SERVICES: Service[] = [
+    {
+        title: 'Full-House Internal Audit Outsourcing',
+        description:
+            'Auditlink provides a complete internal audit function for organizations that do not maintain an in-house team.',
+        icon: FileText,
+    },
+    {
+        title: 'Internal Audit Co-Sourcing Services',
+        description: 'We work alongside your staff to strengthen capacity and close skill gaps.',
+        icon: Shield,
+    },
+    {
+        title: 'Risk Management & Advisory',
+        description: 'Identify, assess, and manage risks that impact performance and compliance.',
+        icon: BarChart,
+    },
+    {
+        title: 'Capacity Building for Auditors',
+        description: 'Targeted training and mentorship for audit and finance teams.',
+        icon: Building2,
+    },
+    {
+        title: 'Business Process Documentation',
+        description: 'Standardizing business processes to improve efficiency and control.',
+        icon: PackageSearch,
+    },
+    {
+        title: 'Audit Manuals and Charters',
+        description: 'Aligned with international standards and best practice.',
+        icon: Form,
+    },
+    {
+        title: 'Recruitment for Audit & Finance',
+        description: 'Identifying technically competent and ethical professionals.',
+        icon: BanknoteArrowDown,
+    },
+    {
+        title: 'Audit Committee Support',
+        description: 'Meeting preparation, reporting, and governance guidance.',
+        icon: HandFist,
+    },
+    {
+        title: 'Payroll Management',
+        description: 'Accuracy, confidentiality, and statutory compliance.',
+        icon: HandCoins,
+    },
+    {
+        title: 'Strategy Implementation Support',
+        description: 'Ensuring strategy is executed effectively.',
+        icon: ChessQueen,
+    },
+    {
+        title: 'Budgeting',
+        description: 'Strengthening planning, control, and financial discipline.',
+        icon: Landmark,
+    },
+]
+
+/* ---------- CARD ---------- */
+
+const ServiceCard = ({ title, iconImage, onClick }: { title: string; iconImage: string; onClick: () => void }) => {
+    return (
+        <div
+            onClick={onClick}
+            className="
+        w-[420px] sm:w-[480px] lg:w-[320px]
+        h-[360px]
+        bg-white
+        rounded-3xl
+        border border-gray-100
+        shadow-lg
+        p-8
+        flex flex-col
+        cursor-pointer
+        hover:shadow-xl
+        transition
+      "
+        >
+            <div className="flex-1 flex items-center justify-center">
+                <img src={iconImage} className="w-[70px] h-[70px]" alt="" />
+            </div>
+
+            <h3 className="text-lg sm:text-xl font-bold text-cyan-700 leading-snug">{title}</h3>
+        </div>
+    )
+}
+
+/* ---------- MAIN ---------- */
+
+export default function ServiceItem() {
+    const [activeService, setActiveService] = useState<Service | null>(null)
+    const scrollRef = useRef<HTMLDivElement>(null)
+
+    const scroll = (dir: 'left' | 'right') => {
+        if (!scrollRef.current) return
+        scrollRef.current.scrollBy({
+            left: dir === 'left' ? -560 : 560,
+            behavior: 'smooth',
+        })
     }
-
-    const prevService = () => {
-        setCurrentServiceSlide((prev) => (prev - 1 + services.length) % services.length)
-    }
-
-    const services = [
-        {
-            title: 'Full-House Internal Audit Outsourcing',
-            description:
-                'Auditlink provides a complete internal audit function for organizations that do not maintain an in-house team. We plan, execute, and report on internal audits independently, giving management and boards reliable assurance while reducing the cost and complexity of running a full audit department.',
-            icon: FileText,
-        },
-        {
-            title: 'Internal Audit Co-Sourcing Services',
-            description:
-                'For organizations with an existing audit team, we work alongside your staff to strengthen capacity and close skill gaps. This flexible approach gives you access to specialized expertise, peak-period support, and objective insight without losing internal ownership.',
-            icon: Shield,
-        },
-        {
-            title: 'Risk Management & Advisory',
-            description:
-                'We help organizations identify, assess, and manage risks that could impact performance, compliance, and sustainability. Our advisory approach is practical and forward-looking, enabling management to make informed decisions and strengthen enterprise risk frameworks.',
-            icon: BarChart,
-        },
-        {
-            title: 'Capacity Building for Internal Auditors and Accountants',
-            description:
-                'We invest in people as much as processes. Through targeted training and mentorship, we build the technical, analytical, and professional capacity of internal auditors and finance teams to perform with confidence and consistency.',
-            icon: Building2,
-        },
-        {
-            title: 'Development and Documentation of Business Processes and Manuals',
-            description:
-                'We document and standardize business processes to improve efficiency, consistency, and control. Clear manuals support accountability, ease onboarding, and provide a strong foundation for audits and compliance.',
-            icon: PackageSearch,
-        },
-        {
-            title: 'Development and Documentation of Internal Audit Manuals and Charters',
-            description:
-                'Auditlink develops internal audit manuals and charters aligned with international standards and best practice. These documents clearly define mandate, authority, scope, and methodology, strengthening audit independence and effectiveness.',
-            icon: Form,
-        },
-        {
-            title: 'Recruitment for Internal Audit and Finance Departments',
-            description:
-                'We support organizations in identifying and recruiting qualified audit and finance professionals. Our recruitment approach focuses on technical competence, ethical grounding, and organizational fit.',
-            icon: BanknoteArrowDown,
-        },
-        {
-            title: 'Audit Committee Support',
-            description:
-                'We assist audit committees with meeting preparation, reporting, and technical guidance. Our support enhances oversight, strengthens governance, and improves communication between management, auditors, and the board.',
-            icon: HandFist,
-        },
-        {
-            title: 'Payroll Management',
-            description:
-                'Auditlink provides payroll management support to ensure accuracy, confidentiality, and compliance with statutory requirements. We help reduce errors, manage controls, and improve reliability in payroll processes.',
-            icon: HandCoins,
-        },
-        {
-            title: 'Strategy Implementation Support',
-            description:
-                'We help translate strategy into action by reviewing implementation frameworks, monitoring progress, and identifying risks that could derail execution. Our assurance ensures strategies are not just well designed, but effectively delivered.',
-            icon:ChessQueen,
-        },
-        {
-            title: 'Budgeting',
-            description:
-                'Auditlink supports budgeting processes by strengthening planning, control, and monitoring mechanisms. We help organizations develop realistic budgets that align resources with strategic priorities and improve financial discipline',
-            icon: Landmark,
-        },
-    ]
 
     return (
-        <section id="services" className="py-32 bg-background">
-            <div className="container mx-auto px-6">
-                <div className="text-center mb-20 space-y-6">
-                    <h2 className="text-4xl md:text-5xl font-bold text-balance leading-tight tracking-tight">
-                        Our Services
-                    </h2>
-                    <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance leading-relaxed">
-                        Building Brands Through Strategic Tailored Services
-                    </p>
-                </div>
+        <section className="relative  w-full pb-32 overflow-hidden">
+            {/* Title */}
+            <div className="flex justify-center mb-10">
+                <h2 className="font-extrabold text-neutral-300 text-4xl sm:text-6xl lg:text-7xl">Our Services</h2>
+            </div>
 
-                <div className="relative max-w-4xl mx-auto">
-                    <div className="overflow-hidden">
-                        <div
-                            className="flex transition-transform duration-500 ease-in-out"
-                            style={{ transform: `translateX(-${currentServiceSlide * 100}%)` }}
-                        >
-                            {services.map((service, index) => (
-                                <div key={index} className="w-full flex-shrink-0 px-4">
-                                    <Card className="border-2 border-border shadow-xl bg-white rounded-sm h-full">
-                                        <CardContent className="p-12 space-y-8 text-center">
-                                            <div className="inline-flex bg-[#071A44] items-center justify-center w-20 h-20 rounded-sm  text-primary-foreground shadow-lg">
-                                                <service.icon className="w-10 h-10" />
-                                            </div>
-                                            <h3 className="text-2xl md:text-3xl font-bold tracking-tight">
-                                                {service.title}
-                                            </h3>
-                                            <p className="text-muted-foreground leading-relaxed text-base md:text-lg">
-                                                {service.description}
-                                            </p>
-                                        </CardContent>
-                                    </Card>
-                                </div>
-                            ))}
-                        </div>
-                    </div>
+            {/* Hero */}
+            <div className="bg-[#071A44] h-[300px] sm:h-[420px] rounded-t-[80px] flex items-center justify-center px-6">
+                <h2 className="text-2xl sm:text-4xl font-bold text-center text-[#00A8B5] max-w-4xl">
+                    Building Brands Through Strategic Tailored Services
+                </h2>
+            </div>
 
-                    <button
-                        onClick={prevService}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 bg-white hover:bg-slate-50 border-2 border-border p-3 rounded-sm transition-all shadow-lg z-10"
-                        aria-label="Previous service"
-                    >
-                        <ChevronLeft className="w-6 h-6 text-primary" />
-                    </button>
-                    <button
-                        onClick={nextService}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 bg-white hover:bg-slate-50 border-2 border-border p-3 rounded-sm transition-all shadow-lg z-10"
-                        aria-label="Next service"
-                    >
-                        <ChevronRight className="w-6 h-6 text-primary" />
-                    </button>
+            {/* Carousel */}
+            <div className="relative -mt-16">
+                {/* Desktop Arrows */}
+                <button
+                    onClick={() => scroll('left')}
+                    className="hidden lg:flex absolute left-8 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-20"
+                >
+                    <ChevronLeft />
+                </button>
 
-                    <div className="flex justify-center gap-3 mt-12">
-                        {services.map((_, index) => (
-                            <button
-                                key={index}
-                                onClick={() => setCurrentServiceSlide(index)}
-                                className={`h-1 rounded-sm transition-all ${
-                                    currentServiceSlide === index ? 'bg-primary w-12' : 'bg-border w-8'
-                                }`}
-                                aria-label={`Go to service ${index + 1}`}
+                <button
+                    onClick={() => scroll('right')}
+                    className="hidden lg:flex absolute right-8 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-20"
+                >
+                    <ChevronRight />
+                </button>
+
+                {/* Cards */}
+                <div
+                    ref={scrollRef}
+                    className="
+            flex gap-8
+            overflow-x-auto
+            px-8
+            scroll-smooth
+            no-scrollbar
+          "
+                >
+                    {SERVICES.map((service, i) => (
+                        <div key={i} className="shrink-0">
+                            <ServiceCard
+                                title={service.title}
+                                iconImage={`/icons/${i + 1}.png`}
+                                onClick={() => setActiveService(service)}
                             />
-                        ))}
-                    </div>
+                        </div>
+                    ))}
                 </div>
             </div>
+
+            {/* Modal */}
+            {activeService && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-4">
+                    <div className="bg-white rounded-3xl p-8 max-w-lg w-full relative">
+                        <button onClick={() => setActiveService(null)} className="absolute top-4 right-4">
+                            <X />
+                        </button>
+
+                        <activeService.icon className="w-14 h-14 mb-4" />
+
+                        <h3 className="text-2xl font-bold text-cyan-700 mb-4">{activeService.title}</h3>
+
+                        <p className="text-gray-700 leading-relaxed">{activeService.description}</p>
+                    </div>
+                </div>
+            )}
         </section>
     )
 }
