@@ -5,16 +5,16 @@ export default function Footer() {
     return (
         <footer className="bg-[#071A44] text-slate-100">
             {/* Centering container */}
-            <div className=" pt-12 pb-12 ">
+            <div className="mr-14 ml-14 pt-12 pb-12 ">
                 <div
                     className="
                        flex
-                       
+                    justify-between
                        items-center
                     "
                 >
                     {/* Brand */}
-                    <div className="flex flex-1 flex-col items-center ">
+                    <div className="flex flex-col  ">
                         <ProductLogo type="secondary" />
                         <p className="leading-relaxed text-white text-2xl mt-4 max-w-sm">
                             Your Trusted Partner in
@@ -24,9 +24,9 @@ export default function Footer() {
                     </div>
 
                     {/* Links */}
-                    <div className="flex flex-1  flex-col items-center  text-left ">
+                    <div className="flex  flex-col text-left ">
                         <h4 className="font-bold text-2xl mb-6 uppercase tracking-wider text-left">Other Links</h4>
-                        <ul className="space-y-3 text-2xl font-semibold">
+                        <ul className="space-y-3 text-2xl font-semibold text-left">
                             <li>
                                 <a href="#about">About Us</a>
                             </li>
@@ -43,7 +43,7 @@ export default function Footer() {
                     </div>
 
                     {/* Contact */}
-                    <div className="flex flex-1  flex-col items-center   text-left">
+                    <div className="flex  flex-col   text-left">
                         <h4 className="font-bold text-2xl mb-6 uppercase tracking-wider">Contact</h4>
                         <ul className="space-y-3 text-2xl font-semibold">
                             <li>info@auditlink.com</li>

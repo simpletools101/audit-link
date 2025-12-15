@@ -66,7 +66,7 @@ export default function ProcessSection() {
 
     return (
         <>
-            <section id="process" className="py-32 bg-slate-50">
+            <section id="process" className="mt-6 flex items-center flex-col justify-center mt-14 bg-slate-50">
                 <div className="container mx-auto px-6 max-w-7xl">
                     {/* TITLE */}
                     <motion.h2

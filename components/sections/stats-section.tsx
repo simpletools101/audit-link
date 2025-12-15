@@ -66,7 +66,7 @@ const StatsComponent: React.FC = () => {
     ]
 
     return (
-        <div className="w-full mt-14 mb-14  flex items-center justify-center ">
+        <div className="w-full  h-[300px]  flex items-center justify-center ">
             <motion.div
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}

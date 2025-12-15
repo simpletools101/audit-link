@@ -12,7 +12,7 @@ import Margin from './margin'
 
 export default function AuditlinkWebsite() {
     return (
-        <div className="min-h-screen space-y-14 bg-background">
+        <div className="min-h-screen  bg-background">
             {/* Hero Carousel */}
             <HeroSection />
 

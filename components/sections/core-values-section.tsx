@@ -29,8 +29,8 @@ export default function CoreValuesSection() {
     ]
 
     return (
-        <section className="py-32 mt-8 bg-white">
-            <div className="container mx-auto px-6">
+        <section className=" bg-white  flex items-center justify-center">
+            <div className="container mt-12 mb-14 ">
              
                 {/* Section Title */}
                 <div className="flex items-center justify-center mb-8">

@@ -37,7 +37,7 @@ const SOCIALS: SocialLink[] = [
 
 export default function FooterSocials() {
     return (
-        <div className="flex justify-center items-center gap-4">
+        <div className="flex  gap-4">
             {SOCIALS.map((social) => {
                 const Icon = social.icon
 
