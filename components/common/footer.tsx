@@ -14,7 +14,7 @@ export default function Footer() {
                     "
                 >
                     {/* Brand */}
-                    <div className="flex flex-1 flex-col items-center text-center">
+                    <div className="flex flex-1 flex-col items-center ">
                         <ProductLogo type="secondary" />
                         <p className="leading-relaxed text-white text-2xl mt-4 max-w-sm">
                             Your Trusted Partner in
@@ -24,23 +24,27 @@ export default function Footer() {
                     </div>
 
                     {/* Links */}
-                    <div className="flex flex-1  flex-col items-center text-center">
-                        <h4 className="font-bold text-2xl mb-6 uppercase tracking-wider">
-                            Other Links
-                        </h4>
+                    <div className="flex flex-1  flex-col items-center  text-left ">
+                        <h4 className="font-bold text-2xl mb-6 uppercase tracking-wider text-left">Other Links</h4>
                         <ul className="space-y-3 text-2xl font-semibold">
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#services">Our Services</a></li>
-                            <li><a href="#process">Our Process</a></li>
-                            <li><a href="#contact">Contact Us</a></li>
+                            <li>
+                                <a href="#about">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#services">Our Services</a>
+                            </li>
+                            <li>
+                                <a href="#process">Our Process</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact Us</a>
+                            </li>
                         </ul>
                     </div>
 
                     {/* Contact */}
-                    <div className="flex flex-1  flex-col items-center text-center">
-                        <h4 className="font-bold text-2xl mb-6 uppercase tracking-wider">
-                            Contact
-                        </h4>
+                    <div className="flex flex-1  flex-col items-center   text-left">
+                        <h4 className="font-bold text-2xl mb-6 uppercase tracking-wider">Contact</h4>
                         <ul className="space-y-3 text-2xl font-semibold">
                             <li>info@auditlink.com</li>
                             <li>

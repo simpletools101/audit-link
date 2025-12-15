@@ -28,17 +28,110 @@ interface Service {
 }
 
 const SERVICES: Service[] = [
-    { title: 'Full-House Internal Audit Outsourcing', description: 'Auditlink provides a complete internal audit function for organizations that do not maintain an in-house team.', icon: FileText },
-    { title: 'Risk Management & Advisory', description: 'Identify, assess, and manage risks that impact performance and compliance.', icon: BarChart },
-    { title: 'Capacity Building for Auditors', description: 'Targeted training and mentorship for audit and finance teams.', icon: Building2 },
-    { title: 'Business Process Documentation', description: 'Standardizing business processes to improve efficiency and control.', icon: PackageSearch },
-    { title: 'Audit Manuals and Charters', description: 'Aligned with international standards and best practice.', icon: Form },
-    { title: 'Recruitment for Audit & Finance', description: 'Identifying technically competent and ethical professionals.', icon: BanknoteArrowDown },
-    { title: 'Audit Committee Support', description: 'Meeting preparation, reporting, and governance guidance.', icon: HandFist },
-    { title: 'Internal Audit Co-Sourcing Services', description: 'We work alongside your staff to strengthen capacity and close skill gaps.', icon: Shield },
-    { title: 'Payroll Management', description: 'Accuracy, confidentiality, and statutory compliance.', icon: HandCoins },
-    { title: 'Strategy Implementation Support', description: 'Ensuring strategy is executed effectively.', icon: ChessQueen },
-    { title: 'Budgeting', description: 'Strengthening planning, control, and financial discipline.', icon: Landmark },
+    {
+        title: 'Full Internal Audit Outsourcing',
+        description: `
+        We deliver a complete, independent
+internal audit function for organizations
+without in-house teams planning,
+executing, and reporting audits while
+reducing cost and operational
+complexity
+        `,
+        icon: FileText,
+    },
+     {
+        title: 'Internal Audit \nCo-Sourcing ',
+        description: `We work alongside existing audit teams
+to strengthen capacity, fill skill gaps, and
+provide specialized and peak-period
+support without losing internal ownership.`,
+        icon: Shield,
+    },
+    {
+        title: 'Risk Management & Advisory',
+        description: `
+        We help identify, assess, and manage risks
+affecting performance, compliance, and
+sustainability through practical, forward-
+looking risk advisory solutions.
+        `,
+        icon: BarChart,
+    },
+    {
+        title: `Capacity Building
+& Training`,
+        description: `
+        We strengthen the skills and confidence
+of internal auditors and finance teams
+through targeted training and
+professional mentorship.
+        `,
+        icon: Building2,
+    },
+    {
+        title: `Business Process
+Documentation
+& Manuals`,
+        description: `We document and standardize business
+processes to improve efficiency,
+consistency, accountability, and
+audit readiness`,
+        icon: PackageSearch,
+    },
+    {
+        title: `Internal Audit
+Manuals & Charters`,
+        description: `We develop audit manuals and charters
+aligned with international standards,
+clearly defining mandate, authority,
+and methodology.`,
+        icon: Form,
+    },
+    {
+        title: `Audit & Finance
+Recruitment
+Support`,
+        description: `
+        We assist in recruiting qualified audit and
+finance professionals with strong
+technical competence and
+ethical grounding.
+        `,
+        icon: BanknoteArrowDown,
+    },
+    {
+        title: 'Audit Committee Support',
+        description: `
+        We support audit committees with
+meeting preparation, reporting, and
+technical guidance to strengthen
+oversight and governance.
+        `,
+        icon: HandFist,
+    },
+   
+    {
+        title: 'Payroll Management',
+        description:`
+        We provide payroll support to ensure
+accuracy, confidentiality, and compliance
+while strengthening controls and reliability
+        `,
+        icon: HandCoins,
+    },
+    {
+        title: `IT & Cyber
+Security Audits`,
+        description: `We assess IT systems, data controls, and
+cyber security practices to identify
+vulnerabilities, strengthen governance,
+and protect critical information assets.`,
+        icon: ChessQueen,
+    },
+    { title: `Tax Advisory`, description: `We support tax compliance, planning, &
+risk management to reduce exposure and
+support sustainable operations.`, icon: Landmark },
 ]
 
 const ServiceCard = ({ title, iconImage, onClick }: { title: string; iconImage: string; onClick: () => void }) => (
@@ -61,7 +154,9 @@ const ServiceCard = ({ title, iconImage, onClick }: { title: string; iconImage: 
         <div className="flex-1 flex items-center ">
             <img src={iconImage} className="w-[80px] sm:w-[100px] h-[80px] sm:h-[100px]" alt={title} />
         </div>
-        <h3 className="text-lg sm:text-xl font-bold text-cyan-700 leading-snug  text-left">{title}</h3>
+        <h3 className="text-lg sm:text-xl font-bold text-cyan-700 leading-snug whitespace-pre-line  text-left">
+            {title}
+        </h3>
     </div>
 )
 
@@ -92,7 +187,7 @@ export default function ServiceItem() {
 
             {/* Hero */}
             <div className="bg-[#071A44] mt-8 h-[250px] sm:h-[280px] rounded-t-[80px] flex items-center justify-center px-6 text-center">
-                <h2 className="text-2xl sm:text-4xl font-bold text-[#00A8B5] max-w-4xl">
+                <h2 className="text-4xl sm:text-5xl font-bold text-[#00A8B5] max-w-4xl">
                     Building Brands Through
                     <p>Strategic Tailored Services</p>
                 </h2>
@@ -101,14 +196,23 @@ export default function ServiceItem() {
             {/* Carousel */}
             <div className="relative -mt-16">
                 {/* Arrows (large screens only) */}
-                <button onClick={() => scroll('left')} className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-20">
+                <button
+                    onClick={() => scroll('left')}
+                    className="hidden lg:flex absolute left-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-20"
+                >
                     <ChevronLeft />
                 </button>
-                <button onClick={() => scroll('right')} className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-20">
+                <button
+                    onClick={() => scroll('right')}
+                    className="hidden lg:flex absolute right-4 top-1/2 -translate-y-1/2 bg-white p-3 rounded-full shadow-lg z-20"
+                >
                     <ChevronRight />
                 </button>
 
-                <div ref={scrollRef} className="flex gap-6 md:gap-8 overflow-x-auto px-4 md:px-8 scroll-smooth no-scrollbar">
+                <div
+                    ref={scrollRef}
+                    className="flex gap-6 md:gap-8 overflow-x-auto px-4 md:px-8 scroll-smooth no-scrollbar"
+                >
                     {SERVICES.map((service, i) => {
                         const iconImage = `/icons/${i + 1}.png`
                         return (
@@ -142,7 +246,11 @@ export default function ServiceItem() {
                         </button>
 
                         {activeIconImage && (
-                            <img src={activeIconImage} alt={activeService.title} className="w-[80px] sm:w-[100px] h-[80px] sm:h-[100px] mb-6 mx-auto" />
+                            <img
+                                src={activeIconImage}
+                                alt={activeService.title}
+                                className="w-[80px] sm:w-[100px] h-[80px] sm:h-[100px] mb-6 mx-auto"
+                            />
                         )}
 
                         <h3 className="text-xl sm:text-2xl font-bold text-cyan-700 mb-4 text-center">

@@ -4,6 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import yearsImage from '@/assets/15-years.png'
 import { motion } from 'framer-motion'
+import ExperienceCard from '../common/about-ctr'
 
 interface AuditHeroProps {
     imageSrc?: string
@@ -11,7 +12,7 @@ interface AuditHeroProps {
 }
 
 const AuditHero: React.FC<AuditHeroProps> = ({
-    imageSrc = '/audit-team.jpg',
+    imageSrc = '/imgs/ABOUT-US.jpg',
     imageAlt = 'Audit team collaboration',
 }) => {
     return (
@@ -35,15 +36,8 @@ const AuditHero: React.FC<AuditHeroProps> = ({
             <div className=" ">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Left side - Image */}
-                    <div className="relative w-full h-[400px] lg:h-[500px] rounded-3xl overflow-hidden bg-[#071a44]">
-                        <div>
-                            <img src={imageSrc} className="object-cover" />
-                        </div>
-
-                        {/* Experience badge overlay */}
-                        <div className="absolute top-0 -right-8 bg-white ">
-                            <img src={yearsImage.src} />
-                        </div>
+                    <div className="relative w-full h-[400px] lg:h-[500px] rounded-3xl  border-none bg-[#071a44]">
+                        <ExperienceCard defaultImage='/imgs/ABOUT-US.jpg'/>
                     </div>
 
                     {/* Right side - Content */}
@@ -52,7 +46,7 @@ const AuditHero: React.FC<AuditHeroProps> = ({
                             Your Trusted Partner in Internal Audit Excellence.
                         </h1>
 
-                        <p className="text-lg text-slate-600 leading-relaxed">
+                        <p className="text-lg text-slate-600 leading-relaxed" suppressHydrationWarning>
                             Auditlink Consulting Ltd is a professional internal audit services firm providing
                             independent, cost-effective assurance solutions to organizations across multiple sectors.
                             <p className='mt-4'>

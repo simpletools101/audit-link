@@ -9,7 +9,7 @@ interface HeroBannerProps {
 }
 
 const HeroBanner: React.FC<HeroBannerProps> = ({
-    imageUrl = 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&h=800&fit=crop',
+    imageUrl = '/imgs/QUOTE.png',
     quote = "Tomorrow's risks demand today's insight.",
     backgroundColor = '#00A8B5',
 }) => {
@@ -30,11 +30,12 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
                                 className="
                   w-full
                   max-w-sm lg:max-w-none
-                  h-auto
-                  max-h-[480px]
+                  h-[550px]
+                  object-top
+               
                   object-cover
-                  rounded-lg
-                  shadow-lg
+
+                 
                 "
                             />
                         </div>

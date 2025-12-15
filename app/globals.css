@@ -3,6 +3,9 @@
 
 @custom-variant dark (&:is(.dark *));
 /* globals.css or component-specific CSS */
+
+
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
