@@ -31,10 +31,18 @@ export default function Footer() {
                             Other Links
                         </h4>
                         <ul className="space-y-2 sm:space-y-3 text-base sm:text-lg lg:text-2xl font-semibold">
-                            <li><a href="#about">About Us</a></li>
-                            <li><a href="#services">Our Services</a></li>
-                            <li><a href="#process">Our Process</a></li>
-                            <li><a href="#contact">Contact Us</a></li>
+                            <li>
+                                <a href="#about">About Us</a>
+                            </li>
+                            <li>
+                                <a href="#services">Our Services</a>
+                            </li>
+                            <li>
+                                <a href="#process">Our Process</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact Us</a>
+                            </li>
                         </ul>
                     </div>
 
@@ -44,10 +52,13 @@ export default function Footer() {
                             Contact
                         </h4>
                         <ul className="space-y-2 sm:space-y-3 text-base sm:text-lg lg:text-2xl font-semibold">
-                            <li>info@auditlink.com</li>
                             <li>
-                               
-                                <a href=" https://wa.me/256762825807">+256 762 825 807</a>
+                                <a href="mailto:info@auditlink.com">info@auditlink.com</a>
+                            </li>
+                            <li>
+                                <a target="_blank" href="https://wa.me/256762825807">
+                                    +256 762 825 807
+                                </a>
                             </li>
                             <li className="pt-2">
                                 <FooterSocials />
