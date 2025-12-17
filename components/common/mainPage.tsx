@@ -1,3 +1,5 @@
+"use effect"
+
 import HeroSection from '@/components/sections/hero-section'
 import StatsSection from '@/components/sections/stats-section'
 import AboutUsSection from '@/components/sections/aboutus-section'
@@ -9,8 +11,20 @@ import HeroBanner from '../sections/quote-section'
 import StatsComponent from '@/components/sections/stats-section'
 import AuditHero from '@/components/sections/aboutus-section'
 import Margin from './margin'
+import { usePathname } from 'next/navigation'
+import { useEffect } from 'react'
 
 export default function AuditlinkWebsite() {
+    const pathname = usePathname()
+
+    useEffect(() => {
+        // Scroll to section based on URL
+        const section = pathname.replace('/', '')
+        if (section) {
+            const el = document.getElementById(section)
+            if (el) el.scrollIntoView({ behavior: 'smooth' })
+        }
+    }, [pathname])
     return (
         <div className="min-h-screen  bg-background">
             {/* Hero Carousel */}

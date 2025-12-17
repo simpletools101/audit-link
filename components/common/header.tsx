@@ -8,10 +8,10 @@ export default function HeaderItem() {
     const [isOpen, setIsOpen] = useState(false)
 
     const menuItems = [
-        { href: '#about', label: 'About Us' },
+        { href: '#aboutus', label: 'About Us' },
         { href: '#services', label: 'Our Services' },
         { href: '#process', label: 'Our Process' },
-        { href: '#contact', label: 'Contact Us' },
+        { href: '#contactus', label: 'Contact Us' },
     ]
 
     const toggleMenu = () => setIsOpen(!isOpen)

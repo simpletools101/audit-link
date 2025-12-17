@@ -15,7 +15,7 @@ const AuditHero: React.FC<AuditHeroProps> = ({
     imageAlt = 'Audit team collaboration',
 }) => {
     return (
-        <section className="bg-white py-8 sm:py-12 lg:py-16" id="about">
+        <section className="bg-white py-8 sm:py-12 lg:py-16" id="aboutus">
             {/* Title Section */}
             <div className="flex items-center justify-center px-4 sm:px-6 lg:px-8">
                 <motion.h2
