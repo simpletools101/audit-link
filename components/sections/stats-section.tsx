@@ -59,7 +59,7 @@ const StatItem: React.FC<StatItemProps> = ({ value, label, delay }) => {
 
 const StatsComponent: React.FC = () => {
     const stats = [
-        { value: '300M', label: 'Total Money Recovered' },
+        { value: '5Billion', label: 'Total Money Recovered' },
         { value: '47', label: 'Happy Clients' },
         { value: '09', label: 'Strategies' },
         { value: '15', label: 'Years Experience' },
