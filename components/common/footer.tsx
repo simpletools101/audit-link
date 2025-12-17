@@ -46,7 +46,8 @@ export default function Footer() {
                         <ul className="space-y-2 sm:space-y-3 text-base sm:text-lg lg:text-2xl font-semibold">
                             <li>info@auditlink.com</li>
                             <li>
-                                <a href="tel:+256762825807">+256 762 825 807</a>
+                               
+                                <a href=" https://wa.me/256762825807">+256 762 825 807</a>
                             </li>
                             <li className="pt-2">
                                 <FooterSocials />
