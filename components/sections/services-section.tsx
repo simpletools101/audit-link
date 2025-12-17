@@ -169,7 +169,7 @@ export default function ServiceItem() {
                 {/* Scrollable Container */}
                 <div
                     ref={scrollRef}
-                    className="flex gap-4 sm:gap-5 md:gap-6 lg:gap-8 overflow-x-auto px-4 sm:px-6 md:px-8 lg:px-12 scroll-smooth no-scrollbar snap-x snap-mandatory"
+                    className="flex mt-6 gap-4 sm:gap-5 md:gap-6 lg:gap-8 overflow-x-auto px-4 sm:px-6 md:px-8 lg:px-12 scroll-smooth no-scrollbar snap-x snap-mandatory"
                 >
                     {SERVICES.map((service, i) => {
                         const iconImage = `/icons/${i + 1}.png`
