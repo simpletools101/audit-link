@@ -11,7 +11,7 @@ export default function ProcessSection() {
     const processSteps = [
         {
             number: '01',
-            title: 'Recovery & Initial Consultation',
+            title: 'Discovery & Initial Consultation',
             outcome: ' Clear understanding of your needs and expectations.',
             description:
                 'We start with a focused conversation to understand your organization, industry, current audit environment, and key risk areas.',
