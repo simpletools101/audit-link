@@ -14,7 +14,7 @@ interface SocialLink {
 const SOCIALS: SocialLink[] = [
     {
         name: 'LinkedIn',
-        href: 'https://www.linkedin.com',
+        href: 'https://www.linkedin.com/company/auditlink-consultancy-ltd/',
         icon: Linkedin,
         iconColor: 'text-white',
         bgColor: '#0A66C2',
@@ -34,6 +34,9 @@ const SOCIALS: SocialLink[] = [
         bgColor: '#000000',
     },
 ]
+
+
+
 
 export default function FooterSocials() {
     return (

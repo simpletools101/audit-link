@@ -62,6 +62,7 @@ export default function Footer() {
                             </li>
                             <li className="pt-2">
                                 <FooterSocials />
+                                
                             </li>
                         </ul>
                     </div>
