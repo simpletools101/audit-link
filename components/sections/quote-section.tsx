@@ -33,7 +33,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({
                                 className="
                                     absolute
                                    
-                                    -top-28
+                                    -top-20
                                     w-full
                                     max-w-sm
                                     lg:max-w-none
