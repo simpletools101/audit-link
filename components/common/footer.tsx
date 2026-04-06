@@ -72,7 +72,7 @@ export default function Footer() {
             {/* Bottom bar */}
             <div className="flex items-center justify-center bg-white border-t border-slate-300 min-h-[65px] px-4 text-center">
                 <p className="text-black font-semibold text-sm sm:text-base lg:text-lg tracking-wide">
-                    © 2025 AUDITLINK — All Rights Reserved.
+                    © 2026 AUDITLINK — All Rights Reserved.
                 </p>
             </div>
         </footer>
